@@ -88,9 +88,9 @@
         echo "<tr>" 
         .  "<td>" . $elem['name'] . "</td>" 
         .  "<td>" . $elem['description'] . "</td>" 
-        .  "<td>" . "vote: " .  $elem['vote'] . "</td>" 
-        .  "<td>" . "numero di parcheggi: " .  $elem['parking'] . "</td>" 
-        .  "<td>" . "distance to center: " .  $elem['distance_to_center'] . "</td>" .
+        .  "<td>" . $elem['vote'] . "</td>" 
+        .  "<td>" . $elem['parking'] . "</td>" 
+        .  "<td>" . $elem['distance_to_center'] . "</td>" .
         
         "</tr>";
 
