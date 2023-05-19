@@ -115,7 +115,7 @@
         };
     }elseif($sceltaParcheggio == 'no'){
         foreach($hotels as $elem){
-            if(in_array($elem['parking'], $hotels)){
+            if(in_array($elem['parking'] == false, $hotels)){
                 echo "<tr>" 
                 .  "<td>" . $elem['name'] . "</td>" 
                 .  "<td>" . $elem['description'] . "</td>" 
