@@ -63,8 +63,8 @@
         echo "<div>" . $elem['name'] . "</div>";
         echo "<div>" . $elem['description'] . "</div>";
         echo "<div>" . "vote: " .  $elem['vote'] . "</div>";
-        echo "<div>" . "parcheggio" .  $elem['parking'] . "</div>";
-        echo "<div>" . "distance to center" .  $elem['distance_to_center'] . "</div>";
+        echo "<div>" . "numero di parcheggi: " .  $elem['parking'] . "</div>";
+        echo "<div>" . "distance to center: " .  $elem['distance_to_center'] . "</div>";
 
     }
     
