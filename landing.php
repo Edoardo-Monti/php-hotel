@@ -99,6 +99,20 @@
             };
     
         };
+    }elseif($scetaPerVoto){
+        foreach($hotels as $elem){
+            if(in_array($elem['vote'] >= $scetaPerVoto , $hotels)){
+                echo "<tr>" 
+                .  "<td>" . $elem['name'] . "</td>" 
+                .  "<td>" . $elem['description'] . "</td>" 
+                .  "<td>" . $elem['vote'] . "</td>" 
+                .  "<td>" . (($elem['parking'] == 0) ? 'no' : 'si'). "</td>" 
+                .  "<td>" . $elem['distance_to_center'] . "</td>" .
+                
+                "</tr>";
+            };
+    
+        };
     }else{
         foreach($hotels as $elem){
                 echo "<tr>" 
