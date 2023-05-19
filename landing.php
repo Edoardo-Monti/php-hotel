@@ -41,7 +41,7 @@
     ];
 
     $sceltaParcheggio = $_GET['scelta'];
-    $scetaPerVoto = $_GET['voto']
+    $scetaPerVoto = $_GET['voto'];
 
 ?>
 
@@ -72,7 +72,7 @@
       <?php
     if($sceltaParcheggio == 'si'){
         foreach($hotels as $elem){
-            if(in_array($elem['parking'], $hotels)){
+            if(in_array($elem['parking'], $hotels) && in_array($elem['vote'] >= $scetaPerVoto , $hotels)){
                 echo "<tr>" 
                 .  "<td>" . $elem['name'] . "</td>" 
                 .  "<td>" . $elem['description'] . "</td>" 
@@ -82,11 +82,12 @@
                 
                 "</tr>";
             };
+           
     
         };
     }elseif($sceltaParcheggio == 'no'){
         foreach($hotels as $elem){
-            if(in_array($elem['parking'] == false, $hotels)){
+            if(in_array($elem['parking'] == false, $hotels) && in_array($elem['vote'] >= $scetaPerVoto , $hotels)){
                 echo "<tr>" 
                 .  "<td>" . $elem['name'] . "</td>" 
                 .  "<td>" . $elem['description'] . "</td>" 

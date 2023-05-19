@@ -22,7 +22,7 @@
     <option>si</option>
     <option>no</option>
 </select>
-<input type="text" name="voto">
+<input type="number" name="voto">
 <button type="submit">Cerca</button>
 
 </form>
