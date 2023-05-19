@@ -41,6 +41,8 @@
 
     ];
 
+    $sceltaParcheggio = $_GET['scelta'];
+
 ?>
 
 
@@ -76,7 +78,12 @@
 <form action="index.php" method="get">
 
 <label for="">parcheggio</label>
-<input type="checkbox" name="parking">
+<select name="scelta" id="" >
+    <option></option>
+    <option>si</option>
+    <option>no</option>
+</select>
+<button type="submit">Cerca</button>
 
 </form>
 
@@ -92,18 +99,48 @@
   </thead>
   <tbody>
       <?php
+    if($sceltaParcheggio == 'si'){
+        foreach($hotels as $elem){
+            if(in_array($elem['parking'], $hotels)){
+                echo "<tr>" 
+                .  "<td>" . $elem['name'] . "</td>" 
+                .  "<td>" . $elem['description'] . "</td>" 
+                .  "<td>" . $elem['vote'] . "</td>" 
+                .  "<td>" . (($elem['parking'] == 0) ? 'no' : 'si'). "</td>" 
+                .  "<td>" . $elem['distance_to_center'] . "</td>" .
+                
+                "</tr>";
+            };
     
-    foreach($hotels as $elem){
-        echo "<tr>" 
-        .  "<td>" . $elem['name'] . "</td>" 
-        .  "<td>" . $elem['description'] . "</td>" 
-        .  "<td>" . $elem['vote'] . "</td>" 
-        .  "<td>" . (($elem['parking'] == 0) ? 'no' : 'si'). "</td>" 
-        .  "<td>" . $elem['distance_to_center'] . "</td>" .
+        };
+    }elseif($sceltaParcheggio == 'no'){
+        foreach($hotels as $elem){
+            if(in_array($elem['parking'], $hotels)){
+                echo "<tr>" 
+                .  "<td>" . $elem['name'] . "</td>" 
+                .  "<td>" . $elem['description'] . "</td>" 
+                .  "<td>" . $elem['vote'] . "</td>" 
+                .  "<td>" . (($elem['parking'] == 0) ? 'no' : 'si'). "</td>" 
+                .  "<td>" . $elem['distance_to_center'] . "</td>" .
+                
+                "</tr>";
+            };
+    
+        };
+    }else{
+        foreach($hotels as $elem){
+                echo "<tr>" 
+                .  "<td>" . $elem['name'] . "</td>" 
+                .  "<td>" . $elem['description'] . "</td>" 
+                .  "<td>" . $elem['vote'] . "</td>" 
+                .  "<td>" . (($elem['parking'] == 0) ? 'no' : 'si'). "</td>" 
+                .  "<td>" . $elem['distance_to_center'] . "</td>" .
+                
+                "</tr>";
+            };
+    
         
-        "</tr>";
-
-    };
+    }
     
 
     ?>
