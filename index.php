@@ -56,7 +56,7 @@
 <body>
     
 
-<div>
+<!-- <div>
     <?php
     
     foreach($hotels as $elem){
@@ -69,7 +69,39 @@
     }
     
     ?>
-</div>
+</div> -->
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">nome</th>
+      <th scope="col">descrizione</th>
+      <th scope="col">voto</th>
+      <th scope="col">parking</th>
+      <th scope="col">distance_to_center</th>
+    </tr>
+  </thead>
+  <tbody>
+      <?php
+    
+    foreach($hotels as $elem){
+        echo "<tr>" 
+        .  "<td>" . $elem['name'] . "</td>" 
+        .  "<td>" . $elem['description'] . "</td>" 
+        .  "<td>" . "vote: " .  $elem['vote'] . "</td>" 
+        .  "<td>" . "numero di parcheggi: " .  $elem['parking'] . "</td>" 
+        .  "<td>" . "distance to center: " .  $elem['distance_to_center'] . "</td>" .
+        
+        "</tr>";
+
+    };
+    
+
+    ?>
+      
+    
+  </tbody>
+</table>
 
 
 </body>
