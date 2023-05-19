@@ -71,6 +71,15 @@
     ?>
 </div> -->
 
+
+
+<form action="index.php" method="get">
+
+<label for="">parcheggio</label>
+<input type="checkbox" name="parking">
+
+</form>
+
 <table class="table">
   <thead>
     <tr>
@@ -89,7 +98,7 @@
         .  "<td>" . $elem['name'] . "</td>" 
         .  "<td>" . $elem['description'] . "</td>" 
         .  "<td>" . $elem['vote'] . "</td>" 
-        .  "<td>" . $elem['parking'] . "</td>" 
+        .  "<td>" . (($elem['parking'] == 0) ? 'no' : 'si'). "</td>" 
         .  "<td>" . $elem['distance_to_center'] . "</td>" .
         
         "</tr>";
